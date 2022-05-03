@@ -1,5 +1,3 @@
-# Markdown Files
-
-## Test?
+# Test?
 
 Hello World! This is a test!
