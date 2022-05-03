@@ -4,9 +4,10 @@
 format: jb-book
 root: intro
 parts:
- - caption: Test 1
+ - caption: Course Overview
    chapters:
-   - file: _chapter1/c1_1
- - caption: Test 2
+   - file: _part1/authors
+ - caption: Course Topics
    chapters:
-   - file: _chapter2/c2_1
+   - file: _part2/intro_dnn
+
