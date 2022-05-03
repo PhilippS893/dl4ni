@@ -3,8 +3,10 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: test
+parts:
+ - caption: Test 1
+   chapters:
+   - file: _chapter1/c1_1
+ - caption: Test 2
+   chapters:
+   - file: _chapter2/c2_1
