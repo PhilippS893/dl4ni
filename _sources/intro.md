@@ -1,4 +1,4 @@
-# Welcome to an introduction to DeepLearning for Neuroimaging
+# An introduction to DeepLearning for Neuroimaging
 
 This book is co-developed with my PhD thesis. It is meant to be an introduction to use Deep Neural Networks (DNNs) for neuroimaging projects. 
 
