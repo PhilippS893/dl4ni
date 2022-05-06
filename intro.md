@@ -1,11 +1,10 @@
-# Welcome to your Jupyter Book
+# An introduction to DeepLearning for Neuroimaging
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+This book is co-developed with my PhD thesis. It is meant to be an introduction to use Deep Neural Networks (DNNs) for neuroimaging projects. 
 
-Check out the content pages bundled with this sample book to see more.
+While some of the contents within this book are based on my PhD project, some sections were specifically designed to help guide newcomers and provide some good practices on how to use DNNs for neuroimaging or even in general. 
+
+In this book you can expect to cover the following topics:
 
 ```{tableofcontents}
 ```
