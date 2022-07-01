@@ -10,4 +10,7 @@ parts:
  - caption: Course Topics
    chapters:
    - file: _part2/intro_dnn
+ - caption: Using the toolbox
+   chapters:
+   - file: test_notebook/classify_mnist
 
