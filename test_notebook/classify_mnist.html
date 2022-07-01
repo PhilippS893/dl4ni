@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; DeepLearning for Neuroimaging</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="C2_1?" href="../_part2/intro_dnn.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DeepLearning for Neuroimaging</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   An introduction to DeepLearning for Neuroimaging
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../_part1/authors.html">
+   Authors
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../_part2/intro_dnn.html">
+   C2_1?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Using the toolbox
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/test_notebook/classify_mnist.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PhilippS893/dl4ni"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PhilippS893/dl4ni/issues/new?title=Issue%20on%20page%20%2Ftest_notebook/classify_mnist.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PhilippS893/dl4ni/master?urlpath=tree/docs/test_notebook/classify_mnist.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-simple-linear-neural-network">
+   Creating a simple linear neural network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-the-model-to-classify-hand-written-digits">
+   Training the model to classify hand-written digits
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-the-mnist-data">
+     Download the MNIST data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-the-training-procedure">
+     Define the training procedure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-model-performance">
+     Check model performance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-ccn">
+   Using a CCN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deprecated-for-now">
+   Deprecated for now
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-simple-linear-neural-network">
+   Creating a simple linear neural network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-the-model-to-classify-hand-written-digits">
+   Training the model to classify hand-written digits
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-the-mnist-data">
+     Download the MNIST data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-the-training-procedure">
+     Define the training procedure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-model-performance">
+     Check model performance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-a-ccn">
+   Using a CCN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deprecated-for-now">
+   Deprecated for now
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p align="justify">Unfortunately, as of now the toolbox is not published in any package manager. Therefore, we need to add the location of the code to the python path.
+Do not mind this code first cell for now, this is just such that things work</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">module_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;C:/Users/Philipp/Documents/doktorarbeit/project/fmriDEEP&#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">module_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p align="justify">We can now import the necessary packages and tools to train a simple linear classifier with PyTorch and my custom code.</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">torchinfo</span> <span class="kn">import</span> <span class="n">summary</span>
+<span class="kn">from</span> <span class="nn">_utils.train_fns</span> <span class="kn">import</span> <span class="n">standard_train</span> <span class="c1"># this is a predefined training function we will use</span>
+<span class="kn">from</span> <span class="nn">_utils.tools</span> <span class="kn">import</span> <span class="n">compute_accuracy</span>   <span class="c1"># a custom function to compute the accuracy scores</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedKFold</span>
+<span class="kn">from</span> <span class="nn">_core.classes.networks</span> <span class="kn">import</span> <span class="n">SimpleLinearModel</span><span class="p">,</span> <span class="n">Simple2dCnnClassifier</span> <span class="c1"># two predefined example neural nets</span>
+<span class="kn">from</span> <span class="nn">torchvision.transforms</span> <span class="kn">import</span> <span class="n">ToTensor</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">Subset</span>
+<span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="n">MNIST</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># this variable contains information whether a GPU can be used for training. If not, we automatically use the CPU.</span>
+<span class="n">DEVICE</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p align="justify">To ensure reproducibility we set the random seed for all sorts of randomizer tools.</p><div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the random seed for reproducibility</span>
+<span class="k">def</span> <span class="nf">set_random_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">random</span> 
+    
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Generator</span><span class="p">()</span> <span class="c1"># can be used in pytorch dataloaders for reproducible sample selection when shuffle=True</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">g</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">set_random_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-simple-linear-neural-network">
+<h2>Creating a simple linear neural network<a class="headerlink" href="#creating-a-simple-linear-neural-network" title="Permalink to this headline">¶</a></h2>
+<p>Now, to show you how simple it is to actually create a neural network with my toolbox:</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the simplest version of a linear neural network this is all you have to do:</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleLinearModel</span><span class="p">(</span><span class="n">input_vals</span><span class="o">=</span><span class="mi">784</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># to see what the network is made of we can use the &#39;summary&#39; function.</span>
+<span class="c1"># If we submit a 1-by-784 (batch, inputsize) to the function we get some</span>
+<span class="c1"># additonal information from &#39;summary&#39; which tells us a bit about our network.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">784</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+SimpleLinearModel                        [1, 10]                   --
+├─Sequential: 1-1                        --                        10,336
+│    └─Sequential: 2-1                   [1, 128]                  --
+│    │    └─Linear: 3-1                  [1, 128]                  100,480
+│    │    └─ReLU: 3-2                    [1, 128]                  --
+├─Dropout: 1-2                           [1, 128]                  --
+├─Sequential: 1-1                        --                        10,336
+│    └─Sequential: 2-2                   [1, 64]                   --
+│    │    └─Linear: 3-3                  [1, 64]                   8,256
+│    │    └─ReLU: 3-4                    [1, 64]                   --
+├─Dropout: 1-4                           [1, 64]                   --
+├─Sequential: 1-1                        --                        10,336
+│    └─Sequential: 2-3                   [1, 32]                   --
+│    │    └─Linear: 3-5                  [1, 32]                   2,080
+├─Dropout: 1-4                           [1, 64]                   --
+├─Softmax: 1-5                           --                        --
+├─Sequential: 1-1                        --                        10,336
+│    └─Sequential: 2                     --                        --
+│    │    └─ReLU: 3-6                    [1, 32]                   --
+├─Linear: 1-6                            [1, 10]                   330
+==========================================================================================
+Total params: 111,146
+Trainable params: 111,146
+Non-trainable params: 0
+Total mult-adds (M): 0.11
+==========================================================================================
+Input size (MB): 0.00
+Forward/backward pass size (MB): 0.00
+Params size (MB): 0.44
+Estimated Total Size (MB): 0.45
+==========================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interesting. From the above output we can already gather some important information about the just created network:</p>
+<ul class="simple">
+<li><p>It has 3 successive linear layers</p>
+<ul>
+<li><p>with decreasing number of neurons per layer [128, 64, 32]</p></li>
+</ul>
+</li>
+<li><p>Each layer is followed by a ReLU activation function</p></li>
+<li><p>Apparently after every linear layer Dropout is used</p></li>
+<li><p>The output is probably transformed by a Softmax function</p></li>
+</ul>
+<p>We also see how many trainable parameters this network has.</p>
+<p>The parameters you see above are set by default. We will see in a later step how to customize them.</p>
+</div>
+<div class="section" id="training-the-model-to-classify-hand-written-digits">
+<h2>Training the model to classify hand-written digits<a class="headerlink" href="#training-the-model-to-classify-hand-written-digits" title="Permalink to this headline">¶</a></h2>
+<p>The easiest benchmark test for any neural network is to test its classificatin performance on the MNIST dataset.
+This dataset contains thousands of hand-written digit exemplars.</p>
+<p>As it is quite easy to use, we will employ it here as well. Before we jump in though, we need to understand how the training process of our neural network will work.</p>
+<p>As the goal of the toolbox is to make it as easy as possible for the user it comes with a predefined ‘standard_train’ function. The code below (click the button to expand) shows you what this function looks like and, again, for ease of use, this function is being used by default when you initialized ‘model’.</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the standard_train function</span>
+<span class="c1"># it requires some additional packages that we import here</span>
+<span class="c1"># in case you simply want to use it you do not have to worry about</span>
+<span class="c1"># implementing these packages, the toolbox does this automatically for you.</span>
+<span class="c1"># We just show it here for completeness</span>
+<span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <span class="n">CrossEntropyLoss</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">torch.optim</span> <span class="kn">import</span> <span class="n">Adam</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+
+
+<span class="k">def</span> <span class="nf">standard_train</span><span class="p">(</span>
+        <span class="n">model</span><span class="p">,</span>
+        <span class="n">train_data</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span>
+        <span class="n">loss_fn</span><span class="o">=</span><span class="n">CrossEntropyLoss</span><span class="p">(),</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">,</span> <span class="n">lr</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">.00001</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">),</span>
+        <span class="o">**</span><span class="n">optimizer_kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A simple function to train a supplied neural network for multiclass problems.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        model: only necessary if this function is not supplied to the model constructor. Otherwise model.fit()</span>
+<span class="sd">            calls the function with model=self</span>
+<span class="sd">        train_data (DataLoader): dataloader used for training or validation/test if function is called in model.eval()</span>
+<span class="sd">            context</span>
+<span class="sd">        loss_fn: loss function to use (default: CrossEntropyLoss)</span>
+<span class="sd">        optimizer: optimizer to use to adjust weights in backward pass (default: Adam)</span>
+<span class="sd">        lr (float): the learning rate for the optimizer</span>
+<span class="sd">        device (torch.device): do computations on device, e.g., cpu or gpu (default: cpu)</span>
+<span class="sd">        **optimizer_kwargs: additional arguments for the supplied optimizer</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple[epoch_loss, stats]:</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># here is something new: the optimizer</span>
+    <span class="c1"># The optimizer determines the algorithm with which the weights of the layers</span>
+    <span class="c1"># are adjusted. Here we use the &#39;Adam&#39; algorithm by default.</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optimizer</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="o">**</span><span class="n">optimizer_kwargs</span><span class="p">)</span>
+
+    <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># the batch loop. Within this loop we iterate over all samples stored in the</span>
+    <span class="c1"># train_data variable.</span>
+    <span class="c1"># the variable &#39;batch&#39; represents the current iteration [integer value]</span>
+    <span class="c1"># the variable &#39;inputs&#39; is the actual input data in the shape of batch_size-by-inputshape</span>
+    <span class="c1"># the variable &#39;labels&#39; contains the respective class label</span>
+    <span class="k">for</span> <span class="n">batch</span><span class="p">,</span> <span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_data</span><span class="p">):</span>
+
+        <span class="c1"># in this function we transfer the data and the label tensors to the chosen device</span>
+        <span class="c1"># NOTE: I RECOMMEND TRANSFERING THE DATA AND LABELS TO THE DEVICE WHEN YOU LOAD THEM</span>
+        <span class="c1"># MORE ON THIS IN A DIFFERENT STEP THOUGH [see DataSets and DataLoaders)</span>
+        <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">labels</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="c1"># reset the gradients</span>
+        <span class="c1"># a crucial step in training the networks. Otherwise the gradients accumulate after </span>
+        <span class="c1"># each batch iteration and weird stuff will happen.</span>
+        <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+                <span class="n">p</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">float</span><span class="p">())</span>  <span class="c1"># forward pass through model</span>
+
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">outputs</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">labels</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>  <span class="c1"># calculate loss</span>
+        
+        <span class="c1"># in this statement we check if the network is currently in training mode,</span>
+        <span class="c1"># which means, that every layer in the network has the required_grad flag set</span>
+        <span class="c1"># to True. This in turn means that the backpropagation algorithm is executed.</span>
+        <span class="c1"># If the model, however, is not in training mode we do not want to exectue</span>
+        <span class="c1"># the backward pass and we also do not want to store the so-called pytorch graph.</span>
+        <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>  <span class="c1"># do a backward pass</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>  <span class="c1"># update parameters</span>
+
+        <span class="c1"># get the probabilities of the predictions</span>
+        <span class="n">prediction_probs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">SM</span><span class="p">(</span><span class="n">outputs</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+        <span class="c1"># get the label number of the output</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">predicted_labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">outputs</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>  <span class="c1"># sum up the loss over all batches</span>
+
+        <span class="c1"># just a helper variable</span>
+        <span class="n">inter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">prediction_probs</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span>
+             <span class="n">labels</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[:,</span> <span class="kc">None</span><span class="p">],</span>
+             <span class="n">predicted_labels</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[:,</span> <span class="kc">None</span><span class="p">]]</span>
+        <span class="p">)</span>
+        <span class="n">stats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">stats</span><span class="p">,</span> <span class="n">inter</span><span class="p">])</span> <span class="k">if</span> <span class="s1">&#39;stats&#39;</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">()</span> <span class="k">else</span> <span class="n">inter</span>  <span class="c1"># noqa</span>
+
+    <span class="k">return</span> <span class="n">epoch_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">),</span> <span class="n">stats</span>  <span class="c1"># noqa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Okay. Now that we know a little bit about how our model is trained, we need to do some preparation work first.
+That means we will download the MNIST dataset and then setup a training loop.</p>
+<p>Let’s do that!</p>
+<div class="section" id="download-the-mnist-data">
+<h3>Download the MNIST data<a class="headerlink" href="#download-the-mnist-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mnist_train</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="s1">&#39;./data/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;./data/MNIST&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">())</span>
+<span class="n">mnist_test</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="s1">&#39;./data/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us look at some examples from the dataset:</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mnist_train</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/classify_mnist_18_0.png" src="../_images/classify_mnist_18_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="define-the-training-procedure">
+<h3>Define the training procedure<a class="headerlink" href="#define-the-training-procedure" title="Permalink to this headline">¶</a></h3>
+<p>We should first make sure that our network is also on our detected device. In case you do not send your model or your data to the same device you will run into errors.</p>
+<p>Next, we should determine for how long, that is how many ‘epochs’, we want to train our model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first, we should make sure the network is on the correct device:</span>
+<span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">)</span>
+
+<span class="c1"># define the number of epochs (that is training iterations) you want your model to go through</span>
+<span class="c1"># let&#39;s say we want this to be 10 epochs</span>
+<span class="n">n_epochs</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we should make use of some cool PyTorch functionallity: DataLoaders!</p>
+<p>ToDo: describe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create the dataloaders</span>
+<span class="n">dl_train</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">generator</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
+<span class="n">dl_test</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">mnist_test</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">generator</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start training the network</span>
+<span class="n">train_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_epochs</span><span class="p">)</span>
+<span class="n">test_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+<span class="n">train_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+<span class="n">test_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_epochs</span><span class="p">):</span>
+
+    <span class="c1"># make sure the network is in training mode</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+
+    <span class="c1"># calling the model.fit() function will execute the &#39;standard_train&#39; function as defined above.</span>
+    <span class="n">train_loss</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">train_stats</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dl_train</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">.001</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
+    <span class="n">train_acc</span><span class="p">[</span><span class="n">epoch</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_accuracy</span><span class="p">(</span><span class="n">train_stats</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">train_stats</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># for validating or testing set the network into evaluation mode such that layers like dropout are not active</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">test_loss</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">test_stats</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dl_test</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
+        <span class="n">test_acc</span><span class="p">[</span><span class="n">epoch</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_accuracy</span><span class="p">(</span><span class="n">test_stats</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">test_stats</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;epoch=</span><span class="si">%03d</span><span class="s1">, train_loss=</span><span class="si">%1.3f</span><span class="s1">, train_acc=</span><span class="si">%1.3f</span><span class="s1">, test_loss=</span><span class="si">%1.3f</span><span class="s1">, test_acc=</span><span class="si">%1.3f</span><span class="s1">&#39;</span> <span class="o">%</span> 
+         <span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">train_loss</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">train_acc</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">test_loss</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">test_acc</span><span class="p">[</span><span class="n">epoch</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=000, train_loss=0.955, train_acc=0.689, test_loss=0.330, test_acc=0.908
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=001, train_loss=0.424, train_acc=0.876, test_loss=0.222, test_acc=0.933
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=002, train_loss=0.339, train_acc=0.905, test_loss=0.189, test_acc=0.944
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=003, train_loss=0.284, train_acc=0.920, test_loss=0.158, test_acc=0.953
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=004, train_loss=0.254, train_acc=0.928, test_loss=0.146, test_acc=0.958
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=005, train_loss=0.231, train_acc=0.935, test_loss=0.136, test_acc=0.961
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=006, train_loss=0.218, train_acc=0.939, test_loss=0.129, test_acc=0.964
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=007, train_loss=0.210, train_acc=0.941, test_loss=0.121, test_acc=0.967
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=008, train_loss=0.201, train_acc=0.944, test_loss=0.114, test_acc=0.967
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=009, train_loss=0.185, train_acc=0.948, test_loss=0.115, test_acc=0.966
+</pre></div>
+</div>
+</div>
+</div>
+<p>That was not so bad was it? Quite simple in fact, I hope. <br>
+Please keep in mind that we try to incorporate the epoch loop into the model.fit() function as well. <br>For now, we unfortunately encounter some memory leaks that we first need to solve.</p>
+</div>
+<div class="section" id="check-model-performance">
+<h3>Check model performance<a class="headerlink" href="#check-model-performance" title="Permalink to this headline">¶</a></h3>
+<p>Let’s look if our network really learned something. For that we will plot some loss and accuracy scores as a function of the epoch as well as a confusion matrix for the test data.</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">_utils.plots</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">train_loss</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">test_loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">);</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;CrossEntropyLoss&#39;</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">));</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">train_acc</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">test_acc</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">);</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;chance&quot;</span><span class="p">));</span>
+
+<span class="n">conf_mat</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">test_stats</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">test_stats</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/classify_mnist_28_0.png" src="../_images/classify_mnist_28_0.png" />
+</div>
+</div>
+<p>This looks great! The line plots clearly indicate a downard trend in the loss curve (left) and an upward trend in the accuracy curve, respectively. Further, we can see that the test loss is lower than in the train. This is somewhat interesting as usually the training set performs better than the test or validation data. It is important to note that the loss and accuracy scores are averages for a given epoch. The training set is about 6 times larger than the test set in the case of MNIST. This is only one explanation of why we get curves like these.</p>
+<p>Now, let me show you how easy it is to switch to another type of neural network: a convolutional neural network (CNN) model</p>
+</div>
+</div>
+<div class="section" id="using-a-ccn">
+<h2>Using a CCN<a class="headerlink" href="#using-a-ccn" title="Permalink to this headline">¶</a></h2>
+<p>Changing to a CNN with the toolbox is quite simple. Instead of the SimpleLinearModel we now use the Simple2dCnnClassifier. <br>
+As the name suggest we are now working with data that is 2-dimensional. Luckily for us the MNIST images are just that. We also know that the MNIST images have 28-by-28 pixels. Thus our input_dims for the model are now [28, 28]. The number of classes remains at 10.
+<br>
+We also again can use the ‘summary’ function to better understand how the model is configured. Please NOTE: images usually have color channels, thus the input of our images needs to be (batch, channels, pixeldim1, pixeldim2)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we actually do exactly the same as for the linear model. </span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Simple2dCnnClassifier</span><span class="p">(</span><span class="n">input_dims</span><span class="o">=</span><span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span> <span class="n">n_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+Simple2dCnnClassifier                    [1, 10]                   --
+├─ReLU: 1-1                              --                        --
+├─Dropout: 1-5                           [1, 256]                  --
+├─Sequential: 1-3                        --                        --
+│    └─Sequential: 2-1                   [1, 8, 14, 14]            --
+│    │    └─Conv2d: 3-1                  [1, 8, 28, 28]            208
+│    │    └─ReLU: 3-2                    [1, 8, 28, 28]            --
+│    │    └─MaxPool2d: 3-3               [1, 8, 14, 14]            --
+│    └─Sequential: 2-2                   [1, 16, 7, 7]             --
+│    │    └─Conv2d: 3-4                  [1, 16, 14, 14]           3,216
+│    │    └─ReLU: 3-5                    [1, 16, 14, 14]           --
+│    │    └─MaxPool2d: 3-6               [1, 16, 7, 7]             --
+│    └─Sequential: 2-3                   [1, 32, 3, 3]             --
+│    │    └─Conv2d: 3-7                  [1, 32, 7, 7]             12,832
+│    │    └─ReLU: 3-8                    [1, 32, 7, 7]             --
+│    │    └─MaxPool2d: 3-9               [1, 32, 3, 3]             --
+├─Dropout: 1-4                           [1, 288]                  --
+├─Sequential: 1                          --                        --
+│    └─Sequential: 2-4                   [1, 256]                  --
+│    │    └─Linear: 3-10                 [1, 256]                  73,984
+│    │    └─ReLU: 3-11                   [1, 256]                  --
+├─Dropout: 1-5                           [1, 256]                  --
+├─Sequential: 1                          --                        --
+│    └─Sequential: 2-5                   [1, 128]                  --
+│    │    └─Linear: 3-12                 [1, 128]                  32,896
+│    │    └─ReLU: 3-13                   [1, 128]                  --
+├─Softmax: 1-6                           --                        --
+├─Linear: 1-7                            [1, 10]                   1,290
+==========================================================================================
+Total params: 124,426
+Trainable params: 124,426
+Non-trainable params: 0
+Total mult-adds (M): 1.53
+==========================================================================================
+Input size (MB): 0.00
+Forward/backward pass size (MB): 0.09
+Params size (MB): 0.50
+Estimated Total Size (MB): 0.59
+==========================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alrighty. Make sure you send the model to the device and set the number of epochs you want to use for training. <br>
+We can keep the dataloaders as they are.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first, we should make sure the network is on the correct device:</span>
+<span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">)</span>
+
+<span class="c1"># define the number of epochs (that is training iterations) you want your model to go through</span>
+<span class="c1"># let&#39;s say we want this to be 10 epochs</span>
+<span class="n">n_epochs</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ok! Time to train your first 2-D CNN! <br>
+Notice that the code below essentially is the same as it is for the linear model. The only thing that changed is some variable names such that we can compare them. But isn’t that great? If we find a nice way we turn the below code into a function and simply supply a model to it and it runs. No matter the network. <br>
+What is important to note here is that we also changed the learning rate from .001 to .01. Interesting effects can happen if one decreases or increases the learning rate. It is quit common however, that for deeper CNNs larger learning rates work better.
+Finding the best value is covered in a different section, however.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start training the network</span>
+<span class="n">cnn_train_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_epochs</span><span class="p">)</span>
+<span class="n">cnn_test_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+<span class="n">cnn_train_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+<span class="n">cnn_test_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_epochs</span><span class="p">):</span>
+
+    <span class="c1"># make sure the network is in training mode</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+
+    <span class="c1"># calling the model.fit() function will execute the &#39;standard_train&#39; function as defined above.</span>
+    <span class="n">cnn_train_loss</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">cnn_train_stats</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dl_train</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">.01</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
+    <span class="n">cnn_train_acc</span><span class="p">[</span><span class="n">epoch</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_accuracy</span><span class="p">(</span><span class="n">cnn_train_stats</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cnn_train_stats</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># for validating or testing set the network into evaluation mode such that layers like dropout are not active</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">cnn_test_loss</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">cnn_test_stats</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dl_test</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
+        <span class="n">cnn_test_acc</span><span class="p">[</span><span class="n">epoch</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_accuracy</span><span class="p">(</span><span class="n">cnn_test_stats</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cnn_test_stats</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;epoch=</span><span class="si">%03d</span><span class="s1">, train_loss=</span><span class="si">%1.3f</span><span class="s1">, train_acc=</span><span class="si">%1.3f</span><span class="s1">, test_loss=</span><span class="si">%1.3f</span><span class="s1">, test_acc=</span><span class="si">%1.3f</span><span class="s1">&#39;</span> <span class="o">%</span> 
+         <span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">cnn_train_loss</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">cnn_train_acc</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">cnn_test_loss</span><span class="p">[</span><span class="n">epoch</span><span class="p">],</span> <span class="n">cnn_test_acc</span><span class="p">[</span><span class="n">epoch</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=000, train_loss=0.529, train_acc=0.825, test_loss=0.111, test_acc=0.965
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=001, train_loss=0.185, train_acc=0.948, test_loss=0.106, test_acc=0.969
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=002, train_loss=0.172, train_acc=0.953, test_loss=0.070, test_acc=0.980
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=003, train_loss=0.168, train_acc=0.957, test_loss=0.075, test_acc=0.980
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=004, train_loss=0.168, train_acc=0.957, test_loss=0.088, test_acc=0.979
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=005, train_loss=0.170, train_acc=0.957, test_loss=0.066, test_acc=0.981
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=006, train_loss=0.164, train_acc=0.958, test_loss=0.070, test_acc=0.982
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=007, train_loss=0.173, train_acc=0.956, test_loss=0.074, test_acc=0.980
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=008, train_loss=0.168, train_acc=0.957, test_loss=0.092, test_acc=0.973
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch=009, train_loss=0.171, train_acc=0.957, test_loss=0.066, test_acc=0.981
+</pre></div>
+</div>
+</div>
+</div>
+<p>Very nice. Let us see if the CNN performed better than the linear model!</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">_utils.plots</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">train_loss</span><span class="p">,</span> 
+             <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">test_loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">cnn_train_loss</span><span class="p">,</span>
+             <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">cnn_test_loss</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">);</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;CrossEntropyLoss&#39;</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s2">&quot;lintrain&quot;</span><span class="p">,</span> <span class="s2">&quot;lintest&quot;</span><span class="p">,</span> <span class="s2">&quot;cnntrain&quot;</span><span class="p">,</span> <span class="s2">&quot;cnntest&quot;</span><span class="p">));</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">train_acc</span><span class="p">,</span> 
+             <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">test_acc</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">cnn_train_acc</span><span class="p">,</span>
+             <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">cnn_test_acc</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">);</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s2">&quot;lintrain&quot;</span><span class="p">,</span> <span class="s2">&quot;lintest&quot;</span><span class="p">,</span> <span class="s2">&quot;cnntrain&quot;</span><span class="p">,</span> <span class="s2">&quot;cnntest&quot;</span><span class="p">,</span> <span class="s2">&quot;chance&quot;</span><span class="p">));</span>
+
+<span class="n">conf_mat</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">cnn_test_stats</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">cnn_test_stats</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/classify_mnist_38_0.png" src="../_images/classify_mnist_38_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="deprecated-for-now">
+<h2>Deprecated for now<a class="headerlink" href="#deprecated-for-now" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the network type you want to train</span>
+<span class="sd">&quot;&quot;&quot;use_model_type = &#39;lin&#39; # &#39;lin&#39; or &#39;cnn&#39;  </span>
+<span class="sd">classes = np.unique(mnist_train.targets)&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;use_model_type = &#39;lin&#39; # &#39;lin&#39; or &#39;cnn&#39;  \nclasses = np.unique(mnist_train.targets)&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;sfk = StratifiedKFold(n_splits=2)</span>
+<span class="sd">n_epochs = 3</span>
+
+<span class="sd">for fold, (train_idx, test_idx) in enumerate(sfk.split(mnist_train.data, mnist_train.targets)):</span>
+<span class="sd">    </span>
+<span class="sd">    # set the name of the run</span>
+<span class="sd">    run_name = &quot;mnist-%s-fold%03d&quot; % (use_model_type, fold+1)   </span>
+<span class="sd">    print(f&#39;Running: {run_name}&#39;)</span>
+<span class="sd">    </span>
+<span class="sd">    # initialize the network for each fold</span>
+<span class="sd">    if use_model_type == &#39;lin&#39;:</span>
+<span class="sd">        model = SimpleLinearModel(28**2, len(classes), train_fn=standard_train).to(DEVICE)</span>
+<span class="sd">    if use_model_type == &#39;cnn&#39;:</span>
+<span class="sd">        model = Simple2dCnnClassifier([28,28], len(classes), train_fn=standard_train).to(DEVICE)</span>
+<span class="sd">            </span>
+<span class="sd">    # create the dataloaders for the current fold</span>
+<span class="sd">    dl_train = DataLoader(Subset(mnist_train, train_idx), batch_size=256, shuffle=True, generator=g)</span>
+<span class="sd">    dl_valid = DataLoader(Subset(mnist_train, test_idx), batch_size=256, shuffle=True, generator=g)</span>
+<span class="sd">    </span>
+<span class="sd">    # start training the network</span>
+<span class="sd">    for epoch in range(1,n_epochs+1):</span>
+<span class="sd">        </span>
+<span class="sd">        # make sure the network is in training mode</span>
+<span class="sd">        if not model.training:</span>
+<span class="sd">            model.train()</span>
+<span class="sd">        </span>
+<span class="sd">        train_loss, train_stats = model.fit(dl_train, lr=.001, device=DEVICE)</span>
+<span class="sd">        train_acc = compute_accuracy(train_stats[:, -1], train_stats[:, -2])</span>
+<span class="sd">        </span>
+<span class="sd">        # for validation set the network into evaluation mode such that layers like dropout are not active</span>
+<span class="sd">        model.eval()</span>
+<span class="sd">        with torch.no_grad():</span>
+<span class="sd">            valid_loss, valid_stats = model.fit(dl_valid, device=DEVICE)</span>
+<span class="sd">            valid_acc = compute_accuracy(valid_stats[:, -1], valid_stats[:, -2])</span>
+<span class="sd">        </span>
+<span class="sd">        print(f&#39;epoch={epoch}, train_loss={train_loss}, train_acc={train_acc}, valid_loss={valid_loss}, valid_acc={valid_acc}&#39;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;sfk = StratifiedKFold(n_splits=2)\nn_epochs = 3\n\nfor fold, (train_idx, test_idx) in enumerate(sfk.split(mnist_train.data, mnist_train.targets)):\n    \n    # set the name of the run\n    run_name = &quot;mnist-%s-fold%03d&quot; % (use_model_type, fold+1)   \n    print(f\&#39;Running: {run_name}\&#39;)\n    \n    # initialize the network for each fold\n    if use_model_type == \&#39;lin\&#39;:\n        model = SimpleLinearModel(28**2, len(classes), train_fn=standard_train).to(DEVICE)\n    if use_model_type == \&#39;cnn\&#39;:\n        model = Simple2dCnnClassifier([28,28], len(classes), train_fn=standard_train).to(DEVICE)\n            \n    # create the dataloaders for the current fold\n    dl_train = DataLoader(Subset(mnist_train, train_idx), batch_size=256, shuffle=True, generator=g)\n    dl_valid = DataLoader(Subset(mnist_train, test_idx), batch_size=256, shuffle=True, generator=g)\n    \n    # start training the network\n    for epoch in range(1,n_epochs+1):\n        \n        # make sure the network is in training mode\n        if not model.training:\n            model.train()\n        \n        train_loss, train_stats = model.fit(dl_train, lr=.001, device=DEVICE)\n        train_acc = compute_accuracy(train_stats[:, -1], train_stats[:, -2])\n        \n        # for validation set the network into evaluation mode such that layers like dropout are not active\n        model.eval()\n        with torch.no_grad():\n            valid_loss, valid_stats = model.fit(dl_valid, device=DEVICE)\n            valid_acc = compute_accuracy(valid_stats[:, -1], valid_stats[:, -2])\n        \n        print(f\&#39;epoch={epoch}, train_loss={train_loss}, train_acc={train_acc}, valid_loss={valid_loss}, valid_acc={valid_acc}\&#39;)\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./test_notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../_part2/intro_dnn.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">C2_1?</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Philipp Seidel - Biomedical Imaging Dept. Uni Regensburg<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
