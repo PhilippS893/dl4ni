@@ -1,3 +1,3 @@
 _build/
-/test_notebook/data/
-/test_notebook/.ipynb_checkpoints/
+/notebooks/data/
+/notebooks/.ipynb_checkpoints/

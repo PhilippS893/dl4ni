@@ -7,10 +7,12 @@ parts:
  - caption: Course Overview
    chapters:
    - file: _part1/authors
- - caption: Course Topics
+ - caption: Prerequisites
    chapters:
-   - file: _part2/intro_dnn
+   - file: _notebooks/datasets
  - caption: Using the toolbox
    chapters:
-   - file: test_notebook/classify_mnist
-
+   - file: notebooks/intro
+   - file: notebooks/classify_mnist
+   - file: notebooks/sweep_intro
+   - file: notebooks/lrp
