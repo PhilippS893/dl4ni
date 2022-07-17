@@ -9,7 +9,8 @@ parts:
    - file: _part1/authors
  - caption: Prerequisites
    chapters:
-   - file: _notebooks/datasets
+   - file: prereqs/anns
+   - file: notebooks/datasets
  - caption: Using the toolbox
    chapters:
    - file: notebooks/intro
