@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; DeepLearning for Neuroimaging</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Classifying MNIST" href="classify_mnist.html" />
+    <link rel="prev" title="PyTorch datasets and dataloaders" href="datasets.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DeepLearning for Neuroimaging</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    An introduction to DeepLearning for Neuroimaging
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../_part1/authors.html">
+   Authors
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Prerequisites
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prereqs/anns.html">
+   What are Neural Nets?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   PyTorch datasets and dataloaders
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Using the toolbox
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classify_mnist.html">
+   Classifying MNIST
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sweep_intro.html">
+   Hyperparameter sweeps with Weights&amp;Biases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lrp.html">
+   Explainable AI
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/PhilippS893/dl4ni/master?urlpath=tree/docs/notebooks/intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/PhilippS893/dl4ni"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/PhilippS893/dl4ni/issues/new?title=Issue%20on%20page%20%2Fnotebooks/intro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/intro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-simple-linear-neural-network">
+   Creating a simple linear neural network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#customizing-the-network">
+   Customizing the network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-and-loading-a-model">
+   Saving and loading a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-simple-linear-neural-network">
+   Creating a simple linear neural network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#customizing-the-network">
+   Customizing the network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-and-loading-a-model">
+   Saving and loading a model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<p align="justify">The toolbox is currently not published in any package manager, yet. Therefore, we need to add the location of the code to the python path.
+Do not mind this code first cell for now, this is just such that things work for the current iteration of this book.</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">module_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../../fmriDEEP&#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">module_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p align="justify">We can now import the necessary packages and tools to check out how to create and configure some custom linear and convolutional neural networks with the tools I wrote.</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">torchinfo</span> <span class="kn">import</span> <span class="n">summary</span>
+<span class="kn">from</span> <span class="nn">_core.networks.LinearNets</span> <span class="kn">import</span> <span class="n">SimpleLinearModel</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">Subset</span><span class="p">,</span> <span class="n">Dataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="creating-a-simple-linear-neural-network">
+<h2>Creating a simple linear neural network<a class="headerlink" href="#creating-a-simple-linear-neural-network" title="Permalink to this headline">#</a></h2>
+<p>Let us first create a <code class="docutils literal notranslate"><span class="pre">SimpleLinearModel</span></code> network. What we do in the code cell below is creating a linear network that a vector of 784 values and provides us with 10 classification probabilities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the simplest version of a linear neural network this is all you have to do:</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleLinearModel</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># to see what the network is made of we can use the &#39;summary&#39; function.</span>
+<span class="c1"># If we submit a 1-by-784 (batch, inputsize) to the function we get some</span>
+<span class="c1"># additonal information from &#39;summary&#39; which tells us a bit about our network.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">784</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+SimpleLinearModel                        [1, 10]                   --
+├─Sequential: 1-1                        --                        10,336
+│    └─Sequential: 2-1                   [1, 128]                  --
+│    │    └─Linear: 3-1                  [1, 128]                  100,480
+│    │    └─ReLU: 3-2                    [1, 128]                  --
+├─Dropout: 1-2                           [1, 128]                  --
+├─Sequential: 1-1                        --                        10,336
+│    └─Sequential: 2-2                   [1, 64]                   --
+│    │    └─Linear: 3-3                  [1, 64]                   8,256
+│    │    └─ReLU: 3-4                    [1, 64]                   --
+├─Dropout: 1-4                           [1, 64]                   --
+├─Sequential: 1-1                        --                        10,336
+│    └─Sequential: 2-3                   [1, 32]                   --
+│    │    └─Linear: 3-5                  [1, 32]                   2,080
+├─Dropout: 1-4                           [1, 64]                   --
+├─Softmax: 1-5                           --                        --
+├─Sequential: 1-1                        --                        10,336
+│    └─Sequential: 2                     --                        --
+│    │    └─ReLU: 3-6                    [1, 32]                   --
+├─Linear: 1-6                            [1, 10]                   330
+==========================================================================================
+Total params: 111,146
+Trainable params: 111,146
+Non-trainable params: 0
+Total mult-adds (M): 0.11
+==========================================================================================
+Input size (MB): 0.00
+Forward/backward pass size (MB): 0.00
+Params size (MB): 0.44
+Estimated Total Size (MB): 0.45
+==========================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>What you see here is the default configuration of the <code class="docutils literal notranslate"><span class="pre">SimpleLinearModel</span></code> class. From the above output we can already gather some important information about the just created network:</p>
+<ul class="simple">
+<li><p>It has 3 successive linear layers</p>
+<ul>
+<li><p>with decreasing number of neurons per layer [128, 64, 32]</p></li>
+</ul>
+</li>
+<li><p>Each layer is followed by a ReLU activation function</p></li>
+<li><p>Apparently after every linear layer Dropout is used</p></li>
+<li><p>The output is probably transformed by a Softmax function</p></li>
+</ul>
+<p>We also see how many trainable parameters this network has. The <code class="docutils literal notranslate"><span class="pre">summary</span></code> function is a neat little tool from which you can also estimate how much space your network requires. If you have limited amount of (G)RAM available to you this may help you also define your batch size for the training process.</p>
+<p>If you like to customize your network follow the steps below:</p>
+</section>
+<section id="customizing-the-network">
+<h2>Customizing the network<a class="headerlink" href="#customizing-the-network" title="Permalink to this headline">#</a></h2>
+<p>Let’s say we would like to have more layers than the default settings provide. We also would like to use a custom train function associated with our network. Before we do that we also need to know what parameters are actually required to <em>build</em> the network. Each default network that I provide with my code comes with a <code class="docutils literal notranslate"><span class="pre">classname._REQUIRED_PARAMETERS</span></code> variable. The code cell below shows you what the <code class="docutils literal notranslate"><span class="pre">SimpleLinearModel</span></code> requires at minimum.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you do not set lin_neurons in your custom config the class will always resort to its default values!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">SimpleLinearModel</span><span class="o">.</span><span class="n">_REQUIRED_PARAMS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;lin_neurons&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next code cell below you can see that I created a function <code class="docutils literal notranslate"><span class="pre">my_train</span></code> which simply prints something five times. Furthermore, I changed the number of linear neurons I want per layer. Notice that there is two more layers in this configuration. The <code class="docutils literal notranslate"><span class="pre">SimpleLinearModel</span></code> class takes care of that for you.</p>
+<p>After initializing the new model I again show the network summary as proof that something changed and I execute the <code class="docutils literal notranslate"><span class="pre">model_configured.fit()</span></code> function too to demonstrate that the network actually uses <code class="docutils literal notranslate"><span class="pre">my_train</span></code> instead of <code class="docutils literal notranslate"><span class="pre">standard_train</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dataloader</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Notice that we have an additional variable &#39;dataloader&#39; in this function.</span>
+<span class="sd">    When you decide to write a custom training function you are currently required to </span>
+<span class="sd">    have a dataloader variable of type torch.data.utils.DataLoader!</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;my_variable&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;lin_neurons&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">256</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
+    <span class="s1">&#39;my_variable&#39;</span><span class="p">:</span> <span class="s2">&quot;Something for a custom train_fn&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">model_configured</span> <span class="o">=</span> <span class="n">SimpleLinearModel</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">my_config</span><span class="p">,</span> <span class="n">my_train</span><span class="p">)</span>
+<span class="c1"># show the model summary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">(</span><span class="n">model_configured</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">784</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+SimpleLinearModel                        [1, 10]                   --
+├─Sequential: 1-1                        --                        43,760
+│    └─Sequential: 2-1                   [1, 256]                  --
+│    │    └─Linear: 3-1                  [1, 256]                  200,960
+│    │    └─ReLU: 3-2                    [1, 256]                  --
+├─Dropout: 1-2                           [1, 256]                  --
+├─Sequential: 1-1                        --                        43,760
+│    └─Sequential: 2-2                   [1, 128]                  --
+│    │    └─Linear: 3-3                  [1, 128]                  32,896
+│    │    └─ReLU: 3-4                    [1, 128]                  --
+├─Dropout: 1-3                           [1, 128]                  --
+├─Sequential: 1-1                        --                        43,760
+│    └─Sequential: 2-3                   [1, 64]                   --
+│    │    └─Linear: 3-5                  [1, 64]                   8,256
+│    │    └─ReLU: 3-6                    [1, 64]                   --
+├─Dropout: 1-4                           [1, 64]                   --
+├─Sequential: 1-1                        --                        43,760
+│    └─Sequential: 2-4                   [1, 32]                   --
+│    │    └─Linear: 3-7                  [1, 32]                   2,080
+│    │    └─ReLU: 3-8                    [1, 32]                   --
+├─Dropout: 1-6                           [1, 32]                   --
+├─Dropout: 1-6                           [1, 32]                   --
+├─Softmax: 1-7                           --                        --
+├─Sequential: 1-1                        --                        43,760
+│    └─Sequential: 2-5                   [1, 16]                   --
+│    │    └─Linear: 3-9                  [1, 16]                   528
+│    │    └─ReLU: 3-10                   [1, 16]                   --
+├─Linear: 1-8                            [1, 10]                   170
+==========================================================================================
+Total params: 244,890
+Trainable params: 244,890
+Non-trainable params: 0
+Total mult-adds (M): 0.24
+==========================================================================================
+Input size (MB): 0.00
+Forward/backward pass size (MB): 0.00
+Params size (MB): 0.98
+Estimated Total Size (MB): 0.99
+==========================================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the new config</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The config:&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">model_configured</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">model_configured</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">values</span><span class="p">())];</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The config:
+lin_neurons : [256, 128, 64, 32, 16]
+my_variable : Something for a custom train_fn
+input_vals : 784
+n_classes : 10
+train_fn : &lt;function my_train at 0x7fdc81a1a820&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the output of the custom train function</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The output of the .fit function:&quot;</span><span class="p">)</span>
+<span class="n">model_configured</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">Dataset</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The output of the .fit function:
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+</pre></div>
+</div>
+</div>
+</div>
+<p>To briefly demonstrate what happens if you provide a config to the <code class="docutils literal notranslate"><span class="pre">SimpeLinearModel</span></code> class without setting the <code class="docutils literal notranslate"><span class="pre">lin_neuron</span></code> key:</p>
+<p>What I will do here is pretty much the same as above. I will use the same <code class="docutils literal notranslate"><span class="pre">my_train</span></code> function as well as the <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> key (however with a different value) in the config dict. Take a close look at the output!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create the model, this time just providing the dict definition directly in the constructor call</span>
+<span class="n">model_configured2</span> <span class="o">=</span> <span class="n">SimpleLinearModel</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;my_variable&#39;</span><span class="p">:</span> <span class="s1">&#39;Something different this time&#39;</span><span class="p">},</span> <span class="n">my_train</span><span class="p">)</span>
+
+<span class="c1"># show us what the config looks like</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The config:&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">model_configured2</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">model_configured2</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">values</span><span class="p">())];</span>
+
+<span class="c1"># call the .fit() function again. We should see something different from the first output now.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The output of the .fit function:&quot;</span><span class="p">)</span>
+<span class="n">model_configured2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">Dataset</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The config:
+lin_neurons : [128, 64, 32]
+my_variable : Something different this time
+input_vals : 784
+n_classes : 10
+train_fn : &lt;function my_train at 0x7fdc81a1a820&gt;
+
+The output of the .fit function:
+Something different this time
+Something different this time
+Something different this time
+Something different this time
+Something different this time
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, I hope you noticed that the values in <code class="docutils literal notranslate"><span class="pre">lin_neurons</span></code> are now equal to those of the default <code class="docutils literal notranslate"><span class="pre">SimpleLinearModel</span></code>.</p>
+<p>What we saw here is that we can pretty much add as many variables to our configuration as we want. However, we can only change the network directly if we change the parameters that are required by the network (i.e., <code class="docutils literal notranslate"><span class="pre">_REQUIRED_PARAMS</span></code>).</p>
+<p>Next we will take a look at how we can save and load the models.</p>
+</section>
+<section id="saving-and-loading-a-model">
+<h2>Saving and loading a model<a class="headerlink" href="#saving-and-loading-a-model" title="Permalink to this headline">#</a></h2>
+<p>Saving the model is quite straight forward. However, there are multiple ways for you to do it:</p>
+<ol class="simple">
+<li><p>You call <code class="docutils literal notranslate"><span class="pre">model.save('path/to/model_name')</span></code> and the so-called <em>state_dict</em> (see: <a class="reference external" href="https://pytorch.org/tutorials/recipes/recipes/what_is_state_dict.html">What is a state_dict in PyTorch</a>) of the network is saved into <code class="docutils literal notranslate"><span class="pre">path/to/model_name/state_dict.pth</span></code> alongside a <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file.</p></li>
+<li><p>You call <code class="docutils literal notranslate"><span class="pre">model.save('path/to/model_name',</span> <span class="pre">save_full=True)</span></code></p></li>
+</ol>
+<p>We will now look at the different ways one can save and load the models with the code blocks below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. We save the state_dict of our configured model</span>
+<span class="n">model_configured</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;my_configured_model&#39;</span><span class="p">)</span>
+
+<span class="c1"># loading the model. Note that in this case you effectifely create a &quot;new&quot; network and then fill its weights</span>
+<span class="c1"># and biases with the state_dict you saved before. This requires you to implement the SimpleLinearModel class!</span>
+<span class="n">loaded_model</span> <span class="o">=</span> <span class="n">SimpleLinearModel</span><span class="p">(</span><span class="s1">&#39;my_configured_model&#39;</span><span class="p">)</span>
+
+<span class="c1"># notice that you can still use the my_train function you supplied by calling the .fit method</span>
+<span class="n">loaded_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">Dataset</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving my_configured_model/state_dict.pth
+Loading from config file my_configured_model/config.yaml
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. We save the entirety of our configured model</span>
+<span class="n">model_configured</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;my_configured_model&#39;</span><span class="p">,</span> <span class="n">save_full</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Using loading approach does not require you to import the SimpleLinearModel class</span>
+<span class="c1"># in a different python file for example. </span>
+<span class="n">loaded_model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;my_configured_model/model.pth&#39;</span><span class="p">)</span>
+
+<span class="c1"># same here, you can still use your custom train function</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Loaded with torch.load&#39;</span><span class="p">)</span>
+<span class="n">loaded_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">Dataset</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving entire model my_configured_model/model.pth
+
+Loaded with torch.load
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+Something for a custom train_fn
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Try to create a <code class="docutils literal notranslate"><span class="pre">Simple2dCnnClassifier</span></code>. The class can be found in the <code class="docutils literal notranslate"><span class="pre">_core.networks.ConvNets</span></code> module</p></li>
+<li><p>Find out what the required parameters of the <code class="docutils literal notranslate"><span class="pre">Simple2dCnnClassifier</span></code> are and make some changes to them</p></li>
+<li><p>Add your own custom training function to the network (without any actual training)</p></li>
+<li><p>Save and load your custom network</p></li>
+</ul>
+<p align="justify">That's it for the introduction. Next up we will see how you can use these neural nets to distinguish between the handwritten digits of the MNIST dataset.</p></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="datasets.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">PyTorch datasets and dataloaders</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="classify_mnist.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classifying MNIST</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Philipp Seidel - Biomedical Imaging Dept. Uni Regensburg<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,6 +1,6 @@
 # Authors
 
-```{figure} ./images/philippseidel.jpg
+```{figure} ../_images/philippseidel.jpg
 :name: Philipp Seidel
 ```
 <p align="justify">Philipp Seidel is the main author of this book. He is currently a Doctoral candidate 
