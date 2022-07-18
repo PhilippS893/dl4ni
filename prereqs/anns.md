@@ -1,6 +1,12 @@
 # What are Neural Nets?
 
-<p align="justify">The beginning of neural networks...</p>
+<p align="justify">Artificial neural networks and deep learning have their beginning in the 1940s.
+Warren McCulloch and Walter Pitts (cite) were among the first to create a computational model
+of neural networks. One also cannot forget about D. O. Hebb who introduced a learning hypothesis 
+based on neural plasticity that we today know as Hebbian Learning (cite). Farley and Wesley Clark were
+the first to simulate a Hebbian network in 1954 (cite). 
+
+The first artifical neuron, the perceptron, was already created in 1958 by Frank Rosenblatt (cite)</p>
 
 ## Why should we care as Neuroscientists?
 
