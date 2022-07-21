@@ -447,24 +447,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<p align="justify">The toolbox is currently not published in any package manager, yet. Therefore, we need to add the location of the code to the python path.
-Do not mind this code first cell for now, this is just such that things work for the current iteration of this book.</p><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">module_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../../fmriDEEP&#39;</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">module_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p align="justify">We can now import the necessary packages and tools to check out how to create and configure some custom linear and convolutional neural networks with the tools I wrote.</p><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">torchinfo</span> <span class="kn">import</span> <span class="n">summary</span>
-<span class="kn">from</span> <span class="nn">_core.networks.LinearNets</span> <span class="kn">import</span> <span class="n">SimpleLinearModel</span>
+<span class="kn">from</span> <span class="nn">delphi.networks.LinearNets</span> <span class="kn">import</span> <span class="n">SimpleLinearModel</span>
 <span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">Subset</span><span class="p">,</span> <span class="n">Dataset</span>
 </pre></div>
 </div>
@@ -648,7 +636,7 @@ lin_neurons : [256, 128, 64, 32, 16]
 my_variable : Something for a custom train_fn
 input_vals : 784
 n_classes : 10
-train_fn : &lt;function my_train at 0x7fdc81a1a820&gt;
+train_fn : &lt;function my_train at 0x7fb90a8ef4c0&gt;
 </pre></div>
 </div>
 </div>
@@ -695,7 +683,7 @@ lin_neurons : [128, 64, 32]
 my_variable : Something different this time
 input_vals : 784
 n_classes : 10
-train_fn : &lt;function my_train at 0x7fdc81a1a820&gt;
+train_fn : &lt;function my_train at 0x7fb90a8ef4c0&gt;
 
 The output of the .fit function:
 Something different this time
